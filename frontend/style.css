@@ -1,0 +1,514 @@
+/* =====================================
+   RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================
+   BODY
+===================================== */
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #141e30,
+            #243b55
+        );
+}
+
+
+/* =====================================
+   CALCULATOR
+===================================== */
+
+.calculator {
+
+    width: 460px;
+
+    background: #111827;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.5);
+
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+.header {
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+.header h1 {
+
+    color: white;
+
+    font-size: 26px;
+
+    margin-bottom: 6px;
+
+}
+
+
+.header p {
+
+    color: #9ca3af;
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================
+   DISPLAY
+===================================== */
+
+.display-box {
+
+    background: #020617;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    margin-bottom: 15px;
+
+    min-height: 100px;
+
+}
+
+
+.previous-display {
+
+    height: 25px;
+
+    color: #64748b;
+
+    text-align: right;
+
+    font-size: 14px;
+
+}
+
+
+#display {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    text-align: right;
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+}
+
+
+/* =====================================
+   MODE
+===================================== */
+
+.mode-row {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.mode {
+
+    flex: 1;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #374151;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.mode.active {
+
+    background: #2563eb;
+
+}
+
+
+/* =====================================
+   SCIENTIFIC BUTTONS
+===================================== */
+
+.scientific-buttons {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 8px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.scientific-buttons button {
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #374151;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+
+}
+
+
+.scientific-buttons button:hover {
+
+    background: #4b5563;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =====================================
+   MAIN BUTTONS
+===================================== */
+
+.buttons {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+}
+
+
+.buttons button {
+
+    height: 60px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #1f2937;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.buttons button:hover {
+
+    background: #374151;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =====================================
+   OPERATOR
+===================================== */
+
+.buttons .operator {
+
+    background: #2563eb;
+
+    font-size: 24px;
+
+}
+
+
+.buttons .operator:hover {
+
+    background: #1d4ed8;
+
+}
+
+
+/* =====================================
+   EQUAL
+===================================== */
+
+.buttons .equals {
+
+    background: #16a34a;
+
+    grid-row: span 2;
+
+    height: 130px;
+
+}
+
+
+.buttons .equals:hover {
+
+    background: #15803d;
+
+}
+
+
+/* =====================================
+   CLEAR
+===================================== */
+
+.buttons .clear {
+
+    background: #dc2626;
+
+}
+
+
+.buttons .clear:hover {
+
+    background: #b91c1c;
+
+}
+
+
+/* =====================================
+   DELETE
+===================================== */
+
+.buttons .delete {
+
+    background: #d97706;
+
+}
+
+
+.buttons .delete:hover {
+
+    background: #b45309;
+
+}
+
+
+/* =====================================
+   ZERO
+===================================== */
+
+.buttons .zero {
+
+    grid-column: span 2;
+
+}
+
+
+/* =====================================
+   HISTORY
+===================================== */
+
+.history-section {
+
+    margin-top: 25px;
+
+    border-top:
+        1px solid #374151;
+
+    padding-top: 15px;
+
+}
+
+
+.history-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 10px;
+
+}
+
+
+.history-header h2 {
+
+    color: white;
+
+    font-size: 18px;
+
+}
+
+
+.history-header button {
+
+    border: none;
+
+    background: #dc2626;
+
+    color: white;
+
+    padding: 7px 12px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+}
+
+
+#history {
+
+    max-height: 180px;
+
+    overflow-y: auto;
+
+}
+
+
+.history-item {
+
+    background: #1f2937;
+
+    color: #d1d5db;
+
+    padding: 10px;
+
+    margin-bottom: 7px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+}
+
+
+.history-item:hover {
+
+    background: #374151;
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 500px) {
+
+    .calculator {
+
+        width: 100%;
+
+        padding: 15px;
+
+    }
+
+
+    .header h1 {
+
+        font-size: 22px;
+
+    }
+
+
+    #display {
+
+        font-size: 25px;
+
+    }
+
+
+    .scientific-buttons button {
+
+        font-size: 12px;
+
+    }
+
+
+    .buttons button {
+
+        height: 55px;
+
+        font-size: 18px;
+
+    }
+
+
+    .buttons .equals {
+
+        height: 120px;
+
+    }
+
+}

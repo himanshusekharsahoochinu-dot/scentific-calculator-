@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Scientific Calculator
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="calculator">
+
+
+    <!-- ==============================
+         HEADER
+    =============================== -->
+
+    <div class="header">
+
+        <h1>
+            Scientific Calculator
+        </h1>
+
+        <p>
+            Full Stack Mathematical Calculator
+        </p>
+
+    </div>
+
+
+    <!-- ==============================
+         DISPLAY
+    =============================== -->
+
+    <div class="display-box">
+
+        <div
+            id="previous-display"
+            class="previous-display"
+        ></div>
+
+
+        <input
+            type="text"
+            id="display"
+            value="0"
+            readonly
+        >
+
+    </div>
+
+
+    <!-- ==============================
+         DEG / RAD
+    =============================== -->
+
+    <div class="mode-row">
+
+        <button
+            id="degree-btn"
+            class="mode active"
+        >
+            DEG
+        </button>
+
+
+        <button
+            id="radian-btn"
+            class="mode"
+        >
+            RAD
+        </button>
+
+    </div>
+
+
+    <!-- ==============================
+         SCIENTIFIC BUTTONS
+    =============================== -->
+
+    <div class="scientific-buttons">
+
+
+        <button
+            onclick="appendFunction('sin(')"
+        >
+            sin
+        </button>
+
+
+        <button
+            onclick="appendFunction('cos(')"
+        >
+            cos
+        </button>
+
+
+        <button
+            onclick="appendFunction('tan(')"
+        >
+            tan
+        </button>
+
+
+        <button
+            onclick="appendFunction('log(')"
+        >
+            log
+        </button>
+
+
+        <button
+            onclick="appendFunction('ln(')"
+        >
+            ln
+        </button>
+
+
+        <button
+            onclick="appendFunction('sqrt(')"
+        >
+            √
+        </button>
+
+
+        <button
+            onclick="appendOperator('^2')"
+        >
+            x²
+        </button>
+
+
+        <button
+            onclick="appendOperator('^')"
+        >
+            xʸ
+        </button>
+
+
+        <button
+            onclick="appendOperator('!')"
+        >
+            x!
+        </button>
+
+
+        <button
+            onclick="appendFunction('abs(')"
+        >
+            abs
+        </button>
+
+
+        <button
+            onclick="appendValue('π')"
+        >
+            π
+        </button>
+
+
+        <button
+            onclick="appendValue('e')"
+        >
+            e
+        </button>
+
+
+        <button
+            onclick="appendValue('(')"
+        >
+            (
+        </button>
+
+
+        <button
+            onclick="appendValue(')')"
+        >
+            )
+        </button>
+
+
+        <button
+            onclick="appendValue('%')"
+        >
+            %
+        </button>
+
+
+    </div>
+
+
+    <!-- ==============================
+         MAIN BUTTONS
+    =============================== -->
+
+    <div class="buttons">
+
+
+        <button
+            class="clear"
+            onclick="clearDisplay()"
+        >
+            AC
+        </button>
+
+
+        <button
+            class="delete"
+            onclick="deleteLast()"
+        >
+            DEL
+        </button>
+
+
+        <button
+            class="operator"
+            onclick="appendOperator('/')"
+        >
+            ÷
+        </button>
+
+
+        <button
+            class="operator"
+            onclick="appendOperator('*')"
+        >
+            ×
+        </button>
+
+
+        <button
+            onclick="appendValue('7')"
+        >
+            7
+        </button>
+
+
+        <button
+            onclick="appendValue('8')"
+        >
+            8
+        </button>
+
+
+        <button
+            onclick="appendValue('9')"
+        >
+            9
+        </button>
+
+
+        <button
+            class="operator"
+            onclick="appendOperator('-')"
+        >
+            −
+        </button>
+
+
+        <button
+            onclick="appendValue('4')"
+        >
+            4
+        </button>
+
+
+        <button
+            onclick="appendValue('5')"
+        >
+            5
+        </button>
+
+
+        <button
+            onclick="appendValue('6')"
+        >
+            6
+        </button>
+
+
+        <button
+            class="operator"
+            onclick="appendOperator('+')"
+        >
+            +
+        </button>
+
+
+        <button
+            onclick="appendValue('1')"
+        >
+            1
+        </button>
+
+
+        <button
+            onclick="appendValue('2')"
+        >
+            2
+        </button>
+
+
+        <button
+            onclick="appendValue('3')"
+        >
+            3
+        </button>
+
+
+        <button
+            class="equals"
+            onclick="calculate()"
+        >
+            =
+        </button>
+
+
+        <button
+            class="zero"
+            onclick="appendValue('0')"
+        >
+            0
+        </button>
+
+
+        <button
+            onclick="appendValue('.')"
+        >
+            .
+        </button>
+
+
+    </div>
+
+
+    <!-- ==============================
+         HISTORY
+    =============================== -->
+
+    <div class="history-section">
+
+
+        <div class="history-header">
+
+            <h2>
+                Calculation History
+            </h2>
+
+
+            <button
+                onclick="clearHistory()"
+            >
+                Clear
+            </button>
+
+        </div>
+
+
+        <div id="history"></div>
+
+
+    </div>
+
+
+</div>
+
+
+<script src="js/script.js"></script>
+
+
+</body>
+
+</html>
